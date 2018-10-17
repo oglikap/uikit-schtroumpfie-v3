@@ -1,0 +1,19 @@
+.single {
+
+  .custom-logo-link img {
+    width: 15em;
+  //  margin-top: -3em;
+  }
+
+  .uk-panel-box {
+    background: #fff;
+    background: url('../../assets/img/about-bg.jpg') center no-repeat;
+    background-size: cover;
+    box-shadow: 0px 4px 10px rgba(150, 150, 150, 0.25);
+  }
+
+  #header {
+    height: auto;
+  }
+
+}

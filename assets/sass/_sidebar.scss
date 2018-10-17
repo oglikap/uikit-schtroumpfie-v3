@@ -1,0 +1,19 @@
+h2.module-heading {
+  font-weight: normal;
+  text-align: center;
+}
+h2.uk-panel-title {
+  font-size: 2em;
+}
+
+#sidebar {
+  .uk-container {
+    width: 90%;
+    font-size:90%;
+    .uk-grid {
+      &:nth-child(even) {
+  //      border-left: 1px solid grey;
+      }
+    }
+  }
+}

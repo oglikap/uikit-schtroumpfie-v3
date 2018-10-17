@@ -1,0 +1,103 @@
+@import "flex";
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+@font-face {
+  font-family: 'TheHandBold';
+  src: url('../fonts/2EF3AC_0_0.eot');src: url('../fonts/2EF3AC_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2EF3AC_0_0.woff2') format('woff2'),url('../fonts/2EF3AC_0_0.woff') format('woff'),url('../fonts/2EF3AC_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Medium';
+  src: url('../fonts/2FDF27_8_0.woff2') format('woff2'), url('../fonts/2FDF27_8_0.woff') format('woff'), url('../fonts/2FDF27_8_0.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'AvenirNextLTPro-Medium', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Unica One', cursive;
+  font-family: 'TheHandBold', cursive;
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 250%;
+}
+
+em {
+  color: #444;
+}
+
+p {
+  font-size: 17px;
+}
+
+p.caption {
+  font-size: 80%;
+  font-variant: all-small-caps;
+}
+
+$red: #840f0a;
+$red-85: rgba(136, 31, 24, .85);
+
+.font-red, .uk-panel .font-red {
+  color: $red;
+}
+
+.round {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.uk-link, a {
+  color: $red;
+  &:hover {
+    color: $red-85;
+  }
+}
+
+.bg-fiber {
+  background: url('../../assets/img/about-bg.jpg') no-repeat;
+  background-size: cover;
+}
+
+// Imported wordpress css
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 15px;
+	margin-right: 1.5rem;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 15px;
+	margin-left: 1.5rem;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+.alignnone {
+	margin: 10px 0;
+}
+
+
+
+@import "navi";
+@import "banner";
+@import "about";
+@import "websites";
+@import "artscom";
+@import "sidebar";
+@import "single";
+@import "line-between";
+@import "navigation";
+@import "tm-grid";
