@@ -16,57 +16,43 @@
 
           <div class="uk-cover-background" style="background-image: url(<?php the_field('bg');?>">
 
-            <!--NAVIGATION  -------------->
-            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-              <div class="uk-navbar-left bs-logo-area">
-                <a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ) ?></a>
-              </div>
-              <div class="uk-navbar-right bs-banner-menu">
-
-                <?php wp_nav_menu( array(
-                  'theme_location' => 'schtroumpfie-menu',
-                  'container' => 'ul',
-                  'menu_class' => 'uk-navbar-nav'
-                ) ); ?>
-
-              </div>
-            </nav>
+            <?php get_template_part( 'template-parts/content', 'nav' ); ?>
 
             <?php if( have_rows('home') ): while( have_rows('home') ): the_row(); ?>
 
-                <div class="bs-logo">
-                  <span class="uk-scrollspy-init-inview uk-scrollspy-inview uk-align-center logo" data-uk-scrollspy="{cls: 'uk-animation-fade', delay: 300}">
-                    <?php the_custom_logo(); ?>
-                  </span>
-                </div>
-
-
+              <div class="bs-logo" uk-scrollspy="cls: uk-animation-fade; delay: 700">
+                <span class="uk-scrollspy-init-inview uk-scrollspy-inview uk-align-center logo" data-uk-scrollspy="{cls: uk-animation-fade', delay: 300}">
+                  <?php the_custom_logo(); ?>
+                </span>
               </div>
+
+            </div>
+
             <?php endwhile; endif; ?>
-          </div>
-        <?php endif; ?>
 
-      </section>
+          <?php endif; ?>
 
-    <?php } else { ?>
+        </section>
 
-      <!--NAVIGATION  -------------->
-      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-        <div class="uk-navbar-left bs-logo-area">
-          <a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ) ?></a>
-        </div>
-        <div class="uk-navbar-right bs-banner-menu">
+        <?php } elseif ( is_single() ) {
 
-          <?php wp_nav_menu( array(
-            'theme_location' => 'schtroumpfie-menu',
-            'container' => 'ul',
-            'menu_class' => 'uk-navbar-nav'
-          ) ); ?>
+          get_template_part( 'template-parts/content', 'nav' );
 
-        </div>
-      </nav>
+        } else { ?>
 
-    <?php } ?>
+          <div class="uk-height-large uk-background-secondary">
 
+              <?php get_template_part( 'template-parts/content', 'nav' ); ?>
+
+              <div class="uk-padding-large uk-child-width-1-2" uk-grid>
+                <div>
+                  <h1 class="uk-light uk-heading-line bs-title"><span><?php the_title(); ?></span></h1>
+                </div>
+                <div>
+                  <img class="bs-page-logo" src="<?php echo get_template_directory_uri() . '/assets/img/logo-los.svg' ?>" alt="logo" style="width: 10%;">
+                </div>
+              </div>
+            </div>
+        <?php } ?>
 
     </header>

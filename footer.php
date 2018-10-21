@@ -1,7 +1,7 @@
 
 
-    <footer id="footer" class="uk-block uk-block-large uk-text-center">
-      <p><a href="#" data-uk-smooth-scroll="offset: 500" class="uk-icon uk-icon-large uk-icon-anchor font-red"></a></p>
+    <footer id="footer" class="uk-child-width-1-1 uk-height-small uk-text-center" uk-grid>
+      <p><a href="#" uk-scroll class="font-red" uk-icon="icon: lifesaver; ratio: 2"></a></p>
       <p style="font-size:.75em;">&copy; Bad Schtroumpfies <?php echo date('Y'); ?></p>
 
       <?php wp_footer(); ?>
@@ -13,8 +13,6 @@
           <?php if (function_exists(clean_custom_menus_mobile())) clean_custom_menus_mobile(); ?>
       </div>
     </div>
-
-  </div><!-- uk-container .uk-container-center .uk-margin -->
 
   </body>
 

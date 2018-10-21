@@ -1,3 +1,14 @@
+.bs-tile-white {
+  background: rgba(255, 255, 255, 1);
+}
+.bs-tile-red {
+  background: $red-67;
+  color: rgba(255, 255, 255, .85);
+}
+.bs-tile-red > p, .bs-tile-white > p {
+  font-size: 14px;
+}
+
 #about {
   background: url('../../assets/img/about-bg.jpg') no-repeat center;
   background-size: cover;
@@ -5,7 +16,6 @@
   a {
     padding-right: .5em;
   }
-
 }
 
 .slogan {

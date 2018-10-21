@@ -5,8 +5,8 @@ function schtroumpfie_scripts() {
   wp_enqueue_style( 'uikit_css', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.19/css/uikit.min.css' );
   wp_enqueue_style( 'custom_css', get_template_directory_uri() . '/assets/css/custom.css' );
 
-  wp_enqueue_script( 'uikit_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit.min.js', array( 'jquery' ), true );
-  wp_enqueue_script( 'uk_icons_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.19/js/uikit-icons.min.j' );
+  wp_enqueue_script( 'uikit_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.19/js/uikit.min.js', array( 'jquery' ), true );
+  wp_enqueue_script( 'uk_icons_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.19/js/uikit-icons.min.js' );
 
 }
 add_action( 'wp_enqueue_scripts', 'schtroumpfie_scripts' );
@@ -65,89 +65,6 @@ function schtroumpfie_create_widget( $description ) {
 }
 schtroumpfie_create_widget( 'Page Sidebar', 'page', 'Displays on the bottom of pages with a sidebar' );
 
-
-// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
-function clean_custom_menus() {
-	$menu_name = 'schtroumpfie-menu'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = "\t\t\t\t". '<ul class="uk-navbar-nav uk-float-right uk-visible-large">' ."\n";
-  //  $menu_list .= "\t\t\t\t". '<li>';
-  //  $menu_list .= "\t\t\t\t". '<a href="#menu" class="menuToggle">';
-  //  $menu_list .= "\t\t\t\t". '<span>Menu</span>';
-  //  $menu_list .= "\t\t\t\t" . '<div id="menu">';
-  //  $menu_list .= "\t\t\t\t" . '<ul>';
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a data-uk-smooth-scroll="{smoothscroll: {offset: 75}}" href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-  //  $menu_list .= "\t\t\t\t". '</a>' . "\n";
-  //  $menu_list .= "\t\t\t" . '</div>' . "\n";
-  //  $menu_list .= "\t\t\t\t". '</li>' . "\n";
-		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-}
-
-// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
-function clean_custom_menus_blog() {
-	$menu_name = 'schtroumpfie-menu-blog'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = "\t\t\t\t". '<ul class="uk-navbar-nav uk-float-right uk-visible-large">' ."\n";
-  //  $menu_list .= "\t\t\t\t". '<li>';
-  //  $menu_list .= "\t\t\t\t". '<a href="#menu" class="menuToggle">';
-  //  $menu_list .= "\t\t\t\t". '<span>Menu</span>';
-  //  $menu_list .= "\t\t\t\t" . '<div id="menu">';
-  //  $menu_list .= "\t\t\t\t" . '<ul>';
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-  //  $menu_list .= "\t\t\t\t". '</a>' . "\n";
-  //  $menu_list .= "\t\t\t" . '</div>' . "\n";
-  //  $menu_list .= "\t\t\t\t". '</li>' . "\n";
-		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-}
-
-function clean_custom_menus_mobile() {
-	$menu_name = 'schtroumpfie-menu'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = "\t\t\t\t". '<ul class="uk-nav uk-nav-offcanvas">' ."\n";
-  //  $menu_list .= "\t\t\t\t". '<li>';
-  //  $menu_list .= "\t\t\t\t". '<a href="#menu" class="menuToggle">';
-  //  $menu_list .= "\t\t\t\t". '<span>Menu</span>';
-  //  $menu_list .= "\t\t\t\t" . '<div id="menu">';
-  //  $menu_list .= "\t\t\t\t" . '<ul>';
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-  //  $menu_list .= "\t\t\t\t". '</a>' . "\n";
-  //  $menu_list .= "\t\t\t" . '</div>' . "\n";
-  //  $menu_list .= "\t\t\t\t". '</li>' . "\n";
-		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-}
 
 /********************************************************************************
 excerpt length

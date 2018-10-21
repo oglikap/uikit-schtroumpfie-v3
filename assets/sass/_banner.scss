@@ -1,13 +1,13 @@
 #banner {
   .uk-cover-background {
-    background-position: 50% 25%;
-    height: 70vh;
+    background-position: 67% 45%;
+    height: 60vh;
   }
 .bs-logo > span > a > img {
   opacity: .3;
   position: absolute;
-  top: 15%;
-  left: 25%;
+  top: 25%;
+  left: 15%;
 }
 .bs-logo-area {
   transform: rotate(-.5deg);
@@ -25,32 +25,40 @@
   }
 }
 .bs-banner-menu {
+  ul {
+    transform: rotate(-1deg);
+
+  }
   ul > li {
     &.bs-websites {
-      position: absolute;
+  //    position: absolute;
       right: 40%;
       > a {
         font-size: 2.5em;
       }
     }
     &.bs-artscom {
-      position: absolute;
-      right: 17.5%;
-      top: 5%;
-
+  //    position: absolute;
+      transform: rotate(-1deg);
+      right: 25%;
+//      top: 15%;
+      > a {
+        color: honeydew;
+      }
     }
     &.bs-contact {
-      position: absolute;
-      right: 0;
-      top: 15%;
+  //    position: absolute;
+      transform: rotate(-1deg);
+      right: 12.5%;
+      top: 50%;
       > a {
         color: yellow;
+        font-size: 1.75em;
       }
     }
     > a {
       color: white;
       font-size: 1.5em;
-      font-family: 'Fredericka the Great', cursive;
       font-family: 'Cabin Sketch', cursive;
       text-transform: lowercase;
       letter-spacing: 2px;
@@ -58,97 +66,78 @@
     }
   }
 }
-  .logo {
-  //  width: 40%;
-  //  text-align: center;
-  }
-  .flex-1, .flex-2 {
-    // @include flexbox;
-    // @include justify-content(center);
-    // @include align-items(center);
-    // @include flex-wrap(wrap);
-  }
-  .flex-2 {
-    height: 45vh;
-  }
-  .flex-1 {
-    height: 20vh;
-    @include justify-content(flex-start);
-  }
-  h1.leitmotif {
-  //  color: yellow;
-  //  display: inline-block;
-    // margin-top: .5em;
-    // font-family: 'Cabin Sketch', cursive;
-    // font-size: 1.5em;
-    // transform: rotate(-.5deg);
-  }
-  p.leitmotif {
-    // display: inline-block;
-    // color: rgba(255, 255, 255, .9);
-    // margin: -1em 0 0 3em;
-    // font-size: .875em;
-    // line-height: 1.125em;
-    // text-align: left;
-    // font-variant: all-small-caps;
-    // transform: rotate(-.1deg);
-    // width: 75%;
-  }
+.bs-panel {
+  border: 3px double $red;
+}
 
   @media screen and (min-width: 480px) {
-    .uk-cover-background {
-      height: 60vh;
-    }
-    .flex-2 {
-      height: 60vh;
-    }
-    .flex-1 {
-      @include justify-content(center);
-    }
-    .logo {
-      width: 50%;
-    }
-    h1.leitmotif {
-      font-size: 2.15em;
-    }
-    p.leitmotif {
-      margin: -3em 0 0 3em;
-      font-size: 1.125em;
-      line-height: normal;
-      width: 90%;
-    }
+
+
+      .uk-cover-background {
+        background-position: 50% 30%;
+        height: 70vh;
+      }
+      .bs-logo > span > a > img {
+        top: 15%;
+        left: 25%;
+      }
+
+
+
+
+    // .uk-cover-background {
+    //   height: 60vh;
+    // }
+    // .flex-2 {
+    //   height: 60vh;
+    // }
+    // .flex-1 {
+    //   @include justify-content(center);
+    // }
+    // .logo {
+    //   width: 50%;
+    // }
+    // h1.leitmotif {
+    //   font-size: 2.15em;
+    // }
+    // p.leitmotif {
+    //   margin: -3em 0 0 3em;
+    //   font-size: 1.125em;
+    //   line-height: normal;
+    //   width: 90%;
+    // }
   }
 
-  @media screen and (min-width: 768px) {
-    .uk-cover-background {
-      height: 60vh;
-    }
-    .flex-2 {
-      height: 65vh;
-    }
-    .logo {
-      width: 75%;
-    }
-    h1.leitmotif {
-      font-size: 1.625em;
-    }
-    p.leitmotif {
-      margin: -2em 0 0 2em;
-      font-size: 1.25em;
-      line-height: normal;
-      width: 90%;
-    }
-  }
-
-  @media screen and (min-width: 960px) {
-    .logo {
-      width: 65%;
-    }
-    h1.leitmotif {
-      font-size: 2.15em;
-    }
-    p.leitmotif {
-      margin: -2em 0 0 5em;
-    }
-  }
+  // @media screen and (min-width: 768px) {
+  //   .uk-cover-background {
+  //     height: 60vh;
+  //   }
+  //   .flex-2 {
+  //     height: 65vh;
+  //   }
+  //   .logo {
+  //     width: 75%;
+  //   }
+  //   h1.leitmotif {
+  //     font-size: 1.625em;
+  //   }
+  //   p.leitmotif {
+  //     margin: -2em 0 0 2em;
+  //     font-size: 1.25em;
+  //     line-height: normal;
+  //     width: 90%;
+  //   }
+  // }
+  //
+  // @media screen and (min-width: 960px) {
+  //   .logo {
+  //     width: 65%;
+  //   }
+  //   h1.leitmotif {
+  //     font-size: 2.15em;
+  //   }
+  //   p.leitmotif {
+  //     margin: -2em 0 0 5em;
+  //   }
+  // }
 }

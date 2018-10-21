@@ -8,5 +8,10 @@ nav {
   font-size: 1.25em;
 }
 .uk-navbar-nav > li > a {
-  color: $red;
+  padding: 0 1.5em;
+}
+
+.bs-dark-nav {
+  background: #212121 !important;
+  box-shadow: 1px 1px 0 #333;
 }

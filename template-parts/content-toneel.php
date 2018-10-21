@@ -1,22 +1,22 @@
-<div class="uk-container uk-container-center">
+<div class="uk-container">
 
-  <div class="uk-grid">
-    <div class="uk-width-1-1">
+  <div class="uk-child-width-1-1" uk-grid>
+    <div>
       <?php if( get_field('bg') ): ?>
-        <div class="uk-cover-background" style="height: 450px; background-image: url(<?php the_field('bg');?>"></div>
+        <div class="uk-background-cover" style="height: 450px; background-image: url(<?php the_field('bg');?>"></div>
       <?php endif; ?>
-      <h2 class="line-between">
-        <?php the_title(); ?>
+      <h2 class="bs-title uk-heading-line">
+        <span><?php the_title(); ?></span>
       </h2>
     </div>
   </div>
 
-  <div class="uk-grid uk-grid-large">
+  <div class="uk-padding" uk-grid>
 
-    <div class="uk-width-medium-6-10">
+    <div class="uk-width-expand@s">
       <?php the_content(); ?>
     </div>
-    <div class="uk-width-medium-4-10">
+    <div class="uk-width-1-3@s">
       <figure class="uk-thumbnail">
         <?php the_post_thumbnail(); the_post_thumbnail_caption(); ?>
       </figure>
@@ -27,8 +27,8 @@
 
     if ( is_single( '254' ) ) : ?>
 
-    <div class="uk-container uk-container-center">
-      <h1 class="uk-text-center line-between">Producties</h1>
+    <div class="uk-container">
+      <h1 class="uk-text-center bs-title uk-heading-line"><span>Producties</span></h1>
       <?php
       //* The Query
         $exec_query = new WP_Query( array (
@@ -42,7 +42,7 @@
 
         //* The Loop
         if ( $exec_query->have_posts() ) { ?>
-          <div class="uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 tm-grid-colors" data-uk-grid="{gutter: 8}" data-uk-scrollspy="{cls:'uk-animation-fade uk-invisible', target:'&gt; div &gt; .uk-panel', delay:200, repeat: true}">
+          <div class="uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m" uk-grid uk-scrollspy="cls: uk-animation-fade uk-invisible; target: > div > .uk-panel; delay:200; repeat: true">
         <?php while ( $exec_query->have_posts() ): $exec_query->the_post(); ?>
 
           <div>

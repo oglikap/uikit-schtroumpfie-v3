@@ -3,15 +3,15 @@
   $rows = get_field('blokken');
   if( $rows )
   {
-    echo '<div class="uk-container uk-container-center">';
-    echo '<div class="uk-grid" data-uk-grid="{gutter:16}" data-uk-grid-margin>';
+    echo '<div class="uk-container">';
+    echo '<div class="uk-child-width-1-2@s uk-margin" uk-grid="masonry: true">';
 
  foreach( $rows as $row ) {
 
-  echo '<div class="uk-width-medium-1-2">';
-  echo '<div class="uk-panel uk-panel-box uk-text-center">';
+  echo '<div>';
+  echo '<div class="uk-card uk-card-default uk-text-center">';
 
-  echo '<h2 class="uk-panel-title">' . $row['title'] . '';
+  echo '<h2 class="uk-card-title">' . $row['title'] . '';
   echo '</h2>';
 
   echo ''. $row['content'] . '';

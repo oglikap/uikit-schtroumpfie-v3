@@ -1,50 +1,30 @@
-<div class="uk-container uk-container-center paper-fiber">
+<?php //* The Query
+  $exec_query = new WP_Query( array (
+  'post_type' => 'website',
+//  'cat' => '-7, -6',
+  'posts_per_page' => -1
+  ) );
 
-  <div class="uk-grid">
-    <div class="uk-width-1-1">
-      <figure class="uk-text-center">
-        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-main-trans.png" alt="">
+  //* The Loop
+  if ( $exec_query->have_posts() ) { ?>
 
-      </figure>
-
-    </div>
-  </div>
-
-  <div class="uk-grid uk-grid-large">
-    <div class="uk-width-1-1">
-      <div class="uk-article uk-text-center">
-        <h1 class="uk-article-title line-between">
-          <?php the_title(); ?>
-        </h1>
-
-        <div class="uk-grid" data-uk-grid-margin>
-          <div class="uk-width-large-4-10">
+    <div class="uk-padding uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-medium" uk-grid="masonry: true; parallax: 150" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200">
+      <?php while ( $exec_query->have_posts() ): $exec_query->the_post(); ?>
+        <div>
+          <div class="uk-card uk-card-default uk-text-center">
+            <h3 class="uk-card-title bs-toneel-title">
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h3>
             <figure>
-              <?php the_post_thumbnail('square-medium'); the_post_thumbnail_caption(); ?>
+              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'square' ); ?></a>
             </figure>
-          </div>
-
-          <div class="uk-width-large-6-10">
-            <p class="uk-article-meta">
-              <?php if( get_field('soort') ): the_field('soort'); endif; ?>
-            </p>
-            <p class="uk-article-lead">
-              <?php if( get_field('datum') ): the_field('datum'); endif; ?>
-            </p>
-            <?php the_content(); ?>
+            <p class="bs-toneel-subtitle"><?php echo( get_the_excerpt() ); ?></p>
           </div>
         </div>
 
-        <hr class="uk-article-divider">
-         <?php echo DISPLAY_ULTIMATE_PLUS(); ?>
-      </div>
+      <?php
+         endwhile;
+         //* Restore original Post Data
+       wp_reset_postdata();}?>
+
     </div>
-  </div>
-
-  <?php get_template_part( 'content', 'blocks' ); ?>
-
-  <footer>
-    <?php include( get_template_directory() . '/includes/navigation.php' ); ?>
-  </footer>
-
-</div>

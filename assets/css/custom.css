@@ -10,14 +10,20 @@
   src: url("../fonts/2FDF27_8_0.woff2") format("woff2"), url("../fonts/2FDF27_8_0.woff") format("woff"), url("../fonts/2FDF27_8_0.ttf") format("truetype"); }
 body {
   font-family: 'Josefin Sans', sans-serif;
-  font-family: 'AvenirNextLTPro-Medium', sans-serif; }
+  font-family: 'AvenirNextLTPro-Medium', sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Unica One', cursive;
-  font-family: 'TheHandBold', cursive;
+  font-family: 'Cabin Sketch', cursive;
   letter-spacing: 4px;
-  font-weight: bold;
   font-size: 250%; }
+  h1.uk-heading-line, h1.bs-title, h2.uk-heading-line, h2.bs-title, h3.uk-heading-line, h3.bs-title, h4.uk-heading-line, h4.bs-title, h5.uk-heading-line, h5.bs-title, h6.uk-heading-line, h6.bs-title {
+    font-family: 'TheHandBold', cursive; }
+  h1.bs-title, h2.bs-title, h3.bs-title, h4.bs-title, h5.bs-title, h6.bs-title {
+    padding-left: 2em;
+    font-size: 3em; }
 
 em {
   color: #444; }
@@ -43,8 +49,23 @@ p.caption {
     color: rgba(136, 31, 24, 0.85); }
 
 .bg-fiber {
-  background: url("../../assets/img/about-bg.jpg") no-repeat;
+  background: url("../img/about-bg.jpg") no-repeat;
   background-size: cover; }
+
+.bs-logo-area > a {
+  font-size: 1.125em;
+  opacity: .7;
+  margin: .25em 0 0 2em;
+  color: #dcdcdc;
+  letter-spacing: 2px; }
+  .bs-logo-area > a:hover {
+    text-decoration: none; }
+
+.bs-page-logo {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  opacity: .7; }
 
 .alignleft {
   display: inline;
@@ -76,16 +97,20 @@ nav {
   font-size: 1.25em; }
 
 .uk-navbar-nav > li > a {
-  color: #840f0a; }
+  padding: 0 1.5em; }
+
+.bs-dark-nav {
+  background: #212121 !important;
+  box-shadow: 1px 1px 0 #333; }
 
 #banner .uk-cover-background {
-  background-position: 50% 25%;
-  height: 70vh; }
+  background-position: 67% 45%;
+  height: 60vh; }
 #banner .bs-logo > span > a > img {
   opacity: .3;
   position: absolute;
-  top: 15%;
-  left: 25%; }
+  top: 25%;
+  left: 15%; }
 #banner .bs-logo-area {
   transform: rotate(-0.5deg); }
   #banner .bs-logo-area > a {
@@ -97,79 +122,50 @@ nav {
     letter-spacing: 2px; }
     #banner .bs-logo-area > a:hover {
       text-decoration: none; }
+#banner .bs-banner-menu ul {
+  transform: rotate(-1deg); }
 #banner .bs-banner-menu ul > li.bs-websites {
-  position: absolute;
   right: 40%; }
   #banner .bs-banner-menu ul > li.bs-websites > a {
     font-size: 2.5em; }
 #banner .bs-banner-menu ul > li.bs-artscom {
-  position: absolute;
-  right: 17.5%;
-  top: 5%; }
+  transform: rotate(-1deg);
+  right: 25%; }
+  #banner .bs-banner-menu ul > li.bs-artscom > a {
+    color: honeydew; }
 #banner .bs-banner-menu ul > li.bs-contact {
-  position: absolute;
-  right: 0;
-  top: 15%; }
+  transform: rotate(-1deg);
+  right: 12.5%;
+  top: 50%; }
   #banner .bs-banner-menu ul > li.bs-contact > a {
-    color: yellow; }
+    color: yellow;
+    font-size: 1.75em; }
 #banner .bs-banner-menu ul > li > a {
   color: white;
   font-size: 1.5em;
-  font-family: 'Fredericka the Great', cursive;
   font-family: 'Cabin Sketch', cursive;
   text-transform: lowercase;
   letter-spacing: 2px;
   opacity: .9; }
-#banner .flex-2 {
-  height: 45vh; }
-#banner .flex-1 {
-  height: 20vh;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-justify-content: flex-start;
-  justify-content: flex-start; }
+#banner .bs-panel {
+  border: 3px double #840f0a; }
 @media screen and (min-width: 480px) {
   #banner .uk-cover-background {
-    height: 60vh; }
-  #banner .flex-2 {
-    height: 60vh; }
-  #banner .flex-1 {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    justify-content: center; }
-  #banner .logo {
-    width: 50%; }
-  #banner h1.leitmotif {
-    font-size: 2.15em; }
-  #banner p.leitmotif {
-    margin: -3em 0 0 3em;
-    font-size: 1.125em;
-    line-height: normal;
-    width: 90%; } }
-@media screen and (min-width: 768px) {
-  #banner .uk-cover-background {
-    height: 60vh; }
-  #banner .flex-2 {
-    height: 65vh; }
-  #banner .logo {
-    width: 75%; }
-  #banner h1.leitmotif {
-    font-size: 1.625em; }
-  #banner p.leitmotif {
-    margin: -2em 0 0 2em;
-    font-size: 1.25em;
-    line-height: normal;
-    width: 90%; } }
-@media screen and (min-width: 960px) {
-  #banner .logo {
-    width: 65%; }
-  #banner h1.leitmotif {
-    font-size: 2.15em; }
-  #banner p.leitmotif {
-    margin: -2em 0 0 5em; } }
+    background-position: 50% 30%;
+    height: 70vh; }
+  #banner .bs-logo > span > a > img {
+    top: 15%;
+    left: 25%; } }
+
+.bs-tile-white {
+  background: white; }
+
+.bs-tile-red {
+  background: rgba(136, 31, 24, 0.67);
+  color: rgba(255, 255, 255, 0.85); }
+
+.bs-tile-red > p, .bs-tile-white > p {
+  font-size: 14px; }
 
 #about {
   background: url("../../assets/img/about-bg.jpg") no-repeat center;
@@ -212,59 +208,25 @@ body.websites-template-default .uk-button {
   background: #840f0a;
   color: white; }
 
-#websites {
-  background: url("../../assets/img/websites-bg.jpg") no-repeat center;
-  background-size: cover; }
-  #websites .uk-container h1 {
-    color: white; }
-  #websites .uk-container img {
-    width: 80%; }
-  #websites .uk-container .line-between:before, #websites .uk-container .line-between:after {
-    background-color: white; }
-  #websites .uk-container .paper-bg {
-    background: url("../../assets/img/websites-bg.png") no-repeat center;
-    background-size: contain; }
-    #websites .uk-container .paper-bg img {
-      margin-top: 3em; }
-  #websites .uk-container p {
-    width: 80%;
-    margin: .5em auto 4em;
-    line-height: 1.125em; }
-  @media screen and (min-width: 480px) {
-    #websites .uk-container .paper-bg img {
-      margin-top: 6em; }
-    #websites .uk-container p {
-      margin: 1em auto 4em;
-      line-height: 1.5em; } }
-  @media screen and (min-width: 768px) {
-    #websites .uk-container .paper-bg img {
-      margin-top: 6em;
-      width: 55%; }
-    #websites .uk-container p {
-      margin: 1em auto 8em;
-      line-height: 1.5em;
-      width: 55%; } }
-  @media screen and (min-width: 960px) {
-    #websites .uk-container .paper-bg img {
-      margin-top: 5em;
-      width: 85%; }
-    #websites .uk-container p {
-      line-height: 1.5em;
-      width: 85%;
-      padding: 1em auto 4em; } }
-  @media screen and (min-width: 1220px) {
-    #websites .uk-container .paper-bg img {
-      width: 90%; }
-    #websites .uk-container p {
-      line-height: 1.5em;
-      width: 85%;
-      padding: 1em auto 2em; } }
-
 #artscom h3, #artscom h4, .bg-paper h3, .bg-paper h4 {
   text-align: center;
-  font-weight: bold; }
+  font-weight: normal;
+  padding-bottom: 0.25em;
+  line-height: 1; }
 #artscom h4, .bg-paper h4 {
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  margin: 0; }
+#artscom .uk-card-title, .bg-paper .uk-card-title {
+  font-size: 2em; }
+  #artscom .uk-card-title > a, .bg-paper .uk-card-title > a {
+    color: #333; }
+
+p.bs-toneel-subtitle {
+  font-variant: small-caps;
+  color: #222;
+  padding-bottom: 2.5em;
+  line-height: 1;
+  font-size: .875em; }
 
 @media screen and (min-width: 480px) {
   #artscom h3 {

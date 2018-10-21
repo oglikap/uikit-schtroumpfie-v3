@@ -16,14 +16,27 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'AvenirNextLTPro-Medium', sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Unica One', cursive;
-  font-family: 'TheHandBold', cursive;
+  font-family: 'Cabin Sketch', cursive;
+//  font-family: 'TheHandBold', cursive;
   letter-spacing: 4px;
-  font-weight: bold;
+//  font-weight: bold;
   font-size: 250%;
+  a {
+
+  }
+  &.uk-heading-line, &.bs-title {
+    font-family: 'TheHandBold', cursive;
+  }
+  &.bs-title {
+    padding-left: 2em;
+    font-size: 3em;
+  }
 }
 
 em {
@@ -41,6 +54,7 @@ p.caption {
 
 $red: #840f0a;
 $red-85: rgba(136, 31, 24, .85);
+$red-67: rgba(136, 31, 24, .67);
 
 .font-red, .uk-panel .font-red {
   color: $red;
@@ -60,8 +74,32 @@ $red-85: rgba(136, 31, 24, .85);
 }
 
 .bg-fiber {
-  background: url('../../assets/img/about-bg.jpg') no-repeat;
+  background: url('../img/about-bg.jpg') no-repeat;
   background-size: cover;
+}
+
+.bs-logo-area {
+//  transform: rotate(-.5deg);
+  > a {
+  //  font-family: 'Fascinate Inline', cursive;
+//    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.125em;
+    opacity: .7;
+    margin: .25em 0 0 2em;
+    color: #dcdcdc;
+//    font-family: 'Cabin Sketch', cursive;
+    letter-spacing: 2px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.bs-page-logo {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  opacity: .7;
 }
 
 // Imported wordpress css
